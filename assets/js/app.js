@@ -38,11 +38,5 @@ $(document).ready(function() {
          else if (val == "Details") {
             $('#viewProject iframe').addClass('desktop');
         }
-
-        if ($('#viewProject iframe').attr('src') == "") {
-            $('#viewProject iframe').hide();
-        } else {
-            $('#viewProject iframe').show();
-        }
     });
 });

@@ -595,7 +595,6 @@ li iframe {
     border-color: #fff;
 }
 
-
 .projects-ul >li .divFore .btn.mobileButton {
     display: none;
 }
@@ -623,6 +622,8 @@ li {
 .technolgy-used li {
     display: inline-block;
     padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #closeProject {
@@ -658,7 +659,6 @@ li {
 #viewProject .project-url:hover {
     color: #f23050;
 }
-
 
 
 /*responsive*/
@@ -727,6 +727,16 @@ li {
     }
     .projects-ul >li .divFore .btn.desktopButton {
         display: none;
+    }
+    #viewProject iframe {
+        display: none;
+    }
+    .technolgy-used li {
+        display: block;
+        padding: 10px;
+    }
+    #viewProject .content {
+        top: 50%;
     }
 }
 
