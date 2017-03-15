@@ -17,6 +17,8 @@ $(document).ready(function() {
         $('#viewProject a').attr('href', src);
         $('#viewProject a').text(src);
 
+        alert(src);
+
         $('#viewProject iframe').removeClass('desktop mobile');
 
         if (val == "Desktop") {
