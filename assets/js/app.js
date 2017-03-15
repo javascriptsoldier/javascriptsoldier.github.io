@@ -1,15 +1,4 @@
 $(document).ready(function() {
-    document.getElementById('navBarMenu').innerHTML = loadPage('nav.html');
-
-    function loadPage(href) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", href, false);
-        xmlhttp.send();
-        return xmlhttp.responseText;
-    }
-
-    document.getElementById('socialDiv').innerHTML = loadPage('social.html');
-
     $('.text').on('click', function() {
         $('.menu-item').toggleClass('left');
     });
@@ -26,7 +15,7 @@ $(document).ready(function() {
 
         $('#viewProject iframe').attr('src', src);
         $('#viewProject a').attr('href', src);
-        $('#viewProject a').text( src);
+        $('#viewProject a').text(src);
 
         $('#viewProject iframe').removeClass('desktop mobile');
 
@@ -36,23 +25,15 @@ $(document).ready(function() {
             $('#viewProject iframe').addClass('mobile');
         }
     });
+    document.getElementById('navBarMenu').innerHTML = loadPage('nav.html');
 
-    $('.prev-project').on('click', function() {
-        $(this).closest('li').hide();
-        if ($(this).closest('li').index() != 0) {
-            $(this).closest('li').last().show();
-        } else {
-            $(this).closest('li').prev().show();
+    function loadPage(href) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", href, false);
+        xmlhttp.send();
+        return xmlhttp.responseText;
+    }
 
-        }
-    });
-    $('.next-project').on('click', function() {
-        $(this).closest('li').hide();
-        if ($(this).closest('li').index() == 4) {
-            $('.pro-des>ul').first().show();
-        } else {
-            $(this).closest('li').next().show();
+    document.getElementById('socialDiv').innerHTML = loadPage('social.html');
 
-        }
-    });
 });
