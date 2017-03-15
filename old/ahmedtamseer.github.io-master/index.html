@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ahamed's Resume - about, work and projects done by Ahamed, Qualification, contact</title>
+    <meta name="description" content="Ahamed's resume gives all the information about Thomsheer's intersted working field, projetcs which he finished, his Qualification and his contact information such has email address, telephone number and his CV">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='images/favicon.ico' rel='shortcut icon' />
+    <meta name="author" content="ahmedTamseer">
+    <link href="http://fonts.googleapis.com/css?family=Oswald|Open+Sans|Indie+Flower" rel="stylesheet" type="text/css">
+    <link href="lib/materialize/css/materialize.min.css" rel="stylesheet" type="text/css">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-app="resume" ng-controller="mainController">
+    <div class="loading-main">
+        <div class="loading-content animated fadeInDown">Resume Is Loading</div>
+    </div>
+    <div class="outer">
+        <!-- my menu -->
+        <div class="menu hide-on-large-only animated fadeInLeft" style="font-size:120%">
+            <div class="menu-list navbar2">
+                <ul>
+                    <li data-index="1" class="menuSel">About</li>
+                    <li data-index="2">Work &amp; Projects</li>
+                    <li data-index="3">Qualification</li>
+                    <li data-index="4">Contact &amp; CV</li>
+                </ul>
+            </div>
+            <ul class="menu-text">
+                <li>M
+                    <br>E
+                    <br>N
+                    <br>U</li>
+            </ul>
+        </div>
+        <div class="upper-section animated fadeInDown" id="up">
+            <div class="data center animated rollIn">
+                <div class="profile-pic"></div>
+                <h1><span>Thomsheer Ahamed</span></h1>
+                <h3><span>Frontend Developer</span></h3>
+                <h3><span>Based in Bangalore, India</span></h3>
+            </div>
+        </div>
+        <ul class="navbar hide-on-med-and-down animated fadeInLeft">
+            <li data-index="1" class="shadow-bottom">About</li>
+            <li data-index="2" class="shadow-bottom">Work &amp; Projects</li>
+            <li data-index="3" class="shadow-bottom">Qualification</li>
+            <li data-index="4" class="shadow-bottom">Contact &amp; CV</li>
+        </ul>
+        <div class="blackboard1 blackboard center animated">
+            <div class="container">
+                <div class="obj">A challenging career in technical field, where my strong analytical and leadership skills would facilitate Mission Critical Solution. To rise to the top through hard work and dedication to duty. To be not just an Asset but pride of the Organization.</div>
+                <div class="clearfix"></div>
+                <div class="container-fluid white-text">
+                    <div class="col-md-6">
+                        <h3 class="head">Programming, Scripting &amp; Query Language</h3>
+                        <div class="row" ng-repeat="eachSkills in skillsPSJArray">
+                            <div class="col-md-3 obj text-left">
+                                {{eachSkills.skills}}
+                            </div>
+                            <div class="col-md-9 nopad">
+                                <div class="pro1">
+                                    <div class="pro2" data-value="{{eachSkills.skillsLevel}}"></div>
+                                    <div class="pro3"><span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /col-md-6 -->
+                    <div class="col-md-6">
+                        <h3 class="head">Graphics</h3>
+                        <div class="row" ng-repeat="eachSkills in skillsGArray">
+                            <div class="col-md-3 obj text-left">
+                                {{eachSkills.skills}}
+                            </div>
+                            <div class="col-md-9 nopad">
+                                <div class="pro1">
+                                    <div class="pro2" data-value="{{eachSkills.skillsLevel}}"></div>
+                                    <div class="pro3"><span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /row -->
+                    </div>
+                    <!-- /col-md-6 -->
+                </div>
+                <!-- /container -->
+            </div>
+                <div style="margin-bottom: 20px;"></div>
+        </div>
+        <div class="blackboard3 blackboard">
+            <div class="container">
+                <div class="row chart-box">
+                    <div class="col-md-4">
+                        <div class="semi-transparent">
+                            <canvas id="canvas1"></canvas>
+                            <div>
+                                <p class="f125">{{eduArray[0].course}}</p>
+                                <p>{{eduArray[0].college}}</p>
+                                <p>{{eduArray[0].university}}</p>
+                                <p>{{eduArray[0].batch}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="semi-transparent">
+                            <canvas id="canvas2"></canvas>
+                            <div>
+                                <p class="f125">{{eduArray[1].course}}</p>
+                                <p>{{eduArray[1].college}}</p>
+                                <p>{{eduArray[1].university}}</p>
+                                <p>{{eduArray[1].batch}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="semi-transparent">
+                            <canvas id="canvas3"></canvas>
+                            <div>
+                                <p class="f125">{{eduArray[2].course}}</p>
+                                <p>{{eduArray[2].college}}</p>
+                                <p>{{eduArray[2].university}}</p>
+                                <p>{{eduArray[2].batch}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blackboard2 blackboard">
+            <!-- <div class="container"> -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="project-badge z-depth-1"> <i class="fa fa-briefcase">&nbsp; </i> Work Experience 1 &mdash; 12th November 2014 - 30th June 2015</span>
+                            <div class="card-title">Software, DTP and Basic faculty</div>
+                            <div>
+                                <p class="f125">Global Computer Institute at Surathkal</p>
+                                <p style="margin-left:10px;">GLOBAL COMPUTER INSTITUTE offers more than 200 computer courses in the field of Accounting, Multimedia &amp; Animation, Software, Hardware and Networking, CAD, Mobile Technology, Spoken English, Data Entry and E-Typing Programs</p>
+                                <p class="f125">Responsible for teaching</p>
+                                <ul>
+                                    <li> &nbsp; - Software Languages like C, C&plus;&plus;, VB and Java</li>
+                                    <li> &nbsp; - Scripting Languages like HTML, VbScript, JavaScript</li>
+                                    <li> &nbsp; - DBMS Query language</li>
+                                    <li> &nbsp; - Graphics like Photoshop, CorelDraw, Flash and PageMaker</li>
+                                    <li> &nbsp; - Basic of computers like Microsoft and so on</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-content">
+                            <span class="project-badge z-depth-1"> <i class="fa fa-briefcase">&nbsp; </i> Work Experience 2 &mdash; 31st August 2015 - 27th March 2016</span>
+                            <div class="card-title">System Engineer(L1)</div>
+                            <div>
+                                <p class="f125">SDM Technologies, Mangalore</p>
+                                <p style="margin-left:10px;">SDM takes responsibility for building mobile apps and eBook solutions through streamlined implementation processes</p>
+                                <p class="f125">Responsible for:</p>
+                                <ul>
+                                    <li> &nbsp; - Coding e-book&apos;s using XML</li>
+                                    <li> &nbsp; - Coding e-book&apos;s using HTML and CSS</li>
+                                </ul>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- </div> -->
+            <div class="row">
+                <div class="col-md-12" ng-repeat="eachProject in projectArray">
+                    <div class="card c1">
+                        <div class="card-content">
+                            <span class="project-badge z-depth-1">Project 
+                             &nbsp; <i class="fa fa-star"></i>
+                        </span>
+                            <div class="card-title">{{eachProject.project}}</div>
+                            <div>
+                                <p> &nbsp; - {{eachProject.techUsed}}</p>
+                                <p class="f125">Project Description</p>
+                                <p> &nbsp; - {{eachProject.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="blackboard4 blackboard center">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="mailto:ahmedtamseer3@gmail.com" target="_blank">
+                        <img src="images/gmail.png" alt="ahmedtamseer3@gmail.com" class="img-responive">
+                        <br/>
+                        <p>Mail me to :
+                            <br/>ahmedtamseer3 @gmail.com</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="tel:+919845464494" target="_blank">
+                        <img src="images/phone.png" alt="Thomsheer Ahamed :+91 9845464494" class="img-responive">
+                        <br/>
+                        <p>Ring Me to:
+                            <br/>+91 9845 464 494</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="https://www.facebook.com/tamseer.coolman" target="_blank">
+                        <img src="images/facebook.png" alt="tamseer.coolman@facebook.com" class="img-responive">
+                        <br/>
+                        <p>Chat me through :
+                            <br/>tamseer.coolman @facebook.com</p>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="misc/resume.pdf" target="_blank">
+                        <img src="images/download.png" alt="Thomsheer Ahamed's Resume" class="img-responive">
+                        <br/>
+                        <p>Download Resume</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer1">Copyright &copy; 2016 Thomsheer Ahamed
+        </div>
+    </div>
+    <!-- library-->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="lib/materialize/js/materialize.min.js"></script>
+    <script src="lib/chartjs/Chart.min.js"></script>
+    <!-- my code-->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
