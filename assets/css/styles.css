@@ -571,7 +571,7 @@ li iframe {
     height: 00px;
     top: 50%;
     left: 50%;
-    background-color: rgba(255, 255, 255,.9);
+    background-color: rgba(255, 255, 255, .9);
     opacity: 0;
     z-index: -1;
     -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
@@ -595,50 +595,71 @@ li iframe {
     border-color: #fff;
 }
 
+
+.projects-ul >li .divFore .btn.mobileButton {
+    display: none;
+}
+
+.projects-ul >li .divFore .btn.desktopButton {
+    display: inline-block;
+}
+
 li {
     list-style: none;
 }
 
-#viewProject{
+#viewProject {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 99999;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0, 0, 0, .5);
     padding: 20px;
     display: none;
 }
-.technolgy-used li{display: inline-block;padding: 10px;}
 
-#closeProject{cursor: pointer;}
+.technolgy-used li {
+    display: inline-block;
+    padding: 10px;
+}
 
-#viewProject .content{
+#closeProject {
+    cursor: pointer;
+}
+
+#viewProject .content {
     position: absolute;
     bottom: 0%;
     left: 50%;
+    width: 100%;
     transform: translateX(-50%);
-
 }
-#viewProject iframe{
+
+#viewProject iframe {
     position: absolute;
     display: block;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-#viewProject iframe.mobile{
+
+#viewProject iframe.mobile {
     height: 500px;
     width: 360px;
 }
-#viewProject iframe.desktop{
+
+#viewProject iframe.desktop {
     height: 500px;
     width: 95%;
 }
-#viewProject .project-url:hover{
+
+#viewProject .project-url:hover {
     color: #f23050;
 }
+
+
 
 /*responsive*/
 
@@ -700,6 +721,12 @@ li {
     }
     .projects-ul >li {
         flex-basis: 90%;
+    }
+    .projects-ul >li .divFore .btn.mobileButton {
+        display: inline-block;
+    }
+    .projects-ul >li .divFore .btn.desktopButton {
+        display: none;
     }
 }
 

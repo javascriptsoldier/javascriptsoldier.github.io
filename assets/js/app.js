@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     document.getElementById('socialDiv').innerHTML = loadPage('social.html');
 
-   $('.text').on('click', function() {
+    $('.text').on('click', function() {
         $('.menu-item').toggleClass('left');
     });
 
@@ -26,9 +26,7 @@ $(document).ready(function() {
 
         $('#viewProject iframe').attr('src', src);
         $('#viewProject a').attr('href', src);
-        $('#viewProject a').text( src);
-
-        alert(src);
+        $('#viewProject a').text(src);
 
         $('#viewProject iframe').removeClass('desktop mobile');
 
@@ -36,6 +34,15 @@ $(document).ready(function() {
             $('#viewProject iframe').addClass('desktop');
         } else if (val == "Mobile") {
             $('#viewProject iframe').addClass('mobile');
+        }
+         else if (val == "Details") {
+            $('#viewProject iframe').addClass('desktop');
+        }
+
+        if ($('#viewProject iframe').attr('src') == "") {
+            $('#viewProject iframe').hide();
+        } else {
+            $('#viewProject iframe').show();
         }
     });
 });
