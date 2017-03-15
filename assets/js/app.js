@@ -1,5 +1,16 @@
 $(document).ready(function() {
-    $('.text').on('click', function() {
+    document.getElementById('navBarMenu').innerHTML = loadPage('nav.html');
+
+    function loadPage(href) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", href, false);
+        xmlhttp.send();
+        return xmlhttp.responseText;
+    }
+
+    document.getElementById('socialDiv').innerHTML = loadPage('social.html');
+
+   $('.text').on('click', function() {
         $('.menu-item').toggleClass('left');
     });
 
@@ -15,7 +26,7 @@ $(document).ready(function() {
 
         $('#viewProject iframe').attr('src', src);
         $('#viewProject a').attr('href', src);
-        $('#viewProject a').text(src);
+        $('#viewProject a').text( src);
 
         alert(src);
 
@@ -27,15 +38,4 @@ $(document).ready(function() {
             $('#viewProject iframe').addClass('mobile');
         }
     });
-    document.getElementById('navBarMenu').innerHTML = loadPage('nav.html');
-
-    function loadPage(href) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", href, false);
-        xmlhttp.send();
-        return xmlhttp.responseText;
-    }
-
-    document.getElementById('socialDiv').innerHTML = loadPage('social.html');
-
 });
