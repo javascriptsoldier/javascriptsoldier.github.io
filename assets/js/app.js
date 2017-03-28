@@ -11,6 +11,10 @@ $(document).ready(function() {
     document.getElementById('socialDiv').innerHTML = loadPage('social.html');
 
     $('.text').on('click', function() {
+        $('.menu .text span:first-child').toggleClass('bar-one');
+        $('.menu .text span:eq(1)').toggleClass('bar-two');
+        $('.menu .text span:last-child').toggleClass('bar-three');
+        $('.projectsPage, .eduactionPage, .experience-page, .homePage').toggleClass('class-fixed');
         $('.menu-item').toggleClass('left');
     });
 

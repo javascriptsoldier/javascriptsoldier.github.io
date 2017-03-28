@@ -51,6 +51,28 @@ a:hover {
     color: #fff;
 }
 
+.text span {
+    background-color: #fff;
+    width: 1em;
+    height: .2em;
+    margin: 4px auto;
+    transition: all .5s ease-in;
+    display: block;
+    margin-left: .4em;
+}
+
+.bar-one {
+    transform: translateY(.333em) rotate(45deg);
+}
+
+.bar-two {
+    opacity: 0;
+}
+
+.bar-three {
+    transform: translateY(-.333em) rotate(-45deg);
+}
+
 .menu-item ul {
     margin-top: 100px;
     width: 100%;
@@ -728,6 +750,9 @@ li {
     .projects-ul >li .divFore .btn.desktopButton {
         display: none;
     }
+    #viewProject {
+        background-color: rgba(0, 0, 0, .8);
+    }
     #viewProject iframe {
         display: none;
     }
@@ -737,6 +762,13 @@ li {
     }
     #viewProject .content {
         top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .bar-one {
+        transform: translateY(.4em) rotate(45deg);
+    }
+    .bar-three {
+        transform: translateY(-.4em) rotate(-45deg);
     }
 }
 
@@ -744,4 +776,12 @@ li {
     .educational-details {
         margin-top: 75px;
     }
+}
+
+.text-pink {
+    color: #f23050;
+    font-weight: bold;
+}
+.class-fixed{
+    position: fixed;
 }
